@@ -1,0 +1,6 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Debug" />
+  <Config name="Debug" configfile="IconHelper.nunit.config" binpathtype="Auto">
+    <assembly path="Tests\bin\Debug\IconHelper.Tests.dll" />
+  </Config>
+</NUnitProject>
