@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{62946AC6-AEA5-4031-A317-EC6FAF2F0F3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IconHelper.Tests", "Tests\IconHelper.Tests.csproj", "{B5E64AEA-064D-4623-AB8D-FF6D2A1B6D2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IconHelper.Tests", "IconHelper.Tests\IconHelper.Tests.csproj", "{B5E64AEA-064D-4623-AB8D-FF6D2A1B6D2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IconHelper.Utils", "Utils\IconHelper.Utils.csproj", "{85ADFEAD-F90E-4A7D-904C-58B963F94640}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IconHelper.Utils", "IconHelper.Utils\IconHelper.Utils.csproj", "{85ADFEAD-F90E-4A7D-904C-58B963F94640}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IconHelper", "IconHelper\IconHelper.csproj", "{D3691B96-FCBA-425E-B655-C585FE196D33}"
 EndProject

@@ -5,10 +5,9 @@
   <ExcludeCategories>false</ExcludeCategories>
   <Nodes>
     <Node UniqueName="[0-1000]C:\work\IconHelper\IconHelper.nunit" Expanded="true" />
-    <Node UniqueName="[0-1011]C:\work\IconHelper\Tests\bin\Debug\IconHelper.Tests.dll" Expanded="true" />
-    <Node UniqueName="[0-1012]IconHelper" Expanded="true" />
-    <Node UniqueName="[0-1013]IconHelper.Tests" Expanded="true" />
-    <Node UniqueName="[0-1014]IconHelper.Tests.Helpers" Expanded="true" />
-    <Node UniqueName="[0-1001]IconHelper.Tests.Helpers.IconExtensionsTests" Expanded="true" />
+    <Node UniqueName="[0-1015]C:\work\IconHelper\Tests\bin\Debug\IconHelper.Tests.dll" Expanded="true" />
+    <Node UniqueName="[0-1016]IconHelper" Expanded="true" />
+    <Node UniqueName="[0-1017]IconHelper.Tests" Expanded="true" />
+    <Node UniqueName="[0-1001]IconHelper.Tests.IconExtensionsTests" Expanded="true" />
   </Nodes>
 </VisualState>

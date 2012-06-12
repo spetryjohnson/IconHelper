@@ -50,7 +50,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Utils\IconHelper.Utils.csproj">
+    <ProjectReference Include="..\IconHelper.Utils\IconHelper.Utils.csproj">
       <Project>{85ADFEAD-F90E-4A7D-904C-58B963F94640}</Project>
       <Name>IconHelper.Utils</Name>
     </ProjectReference>
