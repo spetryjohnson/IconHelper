@@ -57,6 +57,15 @@ namespace IconHelper {
 			var image = new TagBuilder("img");
 			image.Attributes.Add("alt", alt ?? icon.AltText);
 			image.Attributes.Add("title", title ?? icon.Title);
+
+			if (onclick.IsNotNullOrEmpty()) {
+				image.Attributes.Add("onclick", onclick);
+			}
+
+			if (cssClass.IsNotNullOrEmpty()) {
+				image.Attributes.Add("class", cssClass);
+			}
+
 			//image.MergeAttributes(htmlAttributes.ToHtmlAttributeDictionary(), true);
 
 			// filenames starting with a "~" are treated as relative to app root
@@ -71,9 +80,17 @@ namespace IconHelper {
 
 			image.Attributes.Add("src", imagePath);
 
-			return new HtmlString(
+			var imageTagHtml = new HtmlString(
 				image.ToString(TagRenderMode.SelfClosing)
 			);
+
+			if (url.IsNotNullOrEmpty()) {
+				imageTagHtml = new HtmlString(
+					String.Format("<a href=\"{0}\">{1}</a>", url, imageTagHtml.ToString())
+				);
+			}
+
+			return imageTagHtml;
 		}
 	}
 }

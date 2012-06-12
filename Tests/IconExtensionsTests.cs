@@ -58,7 +58,56 @@ namespace IconHelper.Tests {
 		}
 
 		[Test]
-		public void Escapes_quotes_in_title() {
+		public void Can_specify_title_that_overrides_the_metadata() {
+			var html = Html.Icon(TestIcon.SampleIcon, title: "Override").ToString();
+
+			Console.WriteLine(html);
+
+			Assert.That(html, Is.StringContaining("title=\"Override\""));
+			Assert.That(html, Is.Not.StringContaining("Sample title"));
+		}
+
+		[Test]
+		public void Can_specify_alt_text_that_overrides_the_metadata() {
+			var html = Html.Icon(TestIcon.SampleIcon, alt: "Override").ToString();
+
+			Console.WriteLine(html);
+
+			Assert.That(html, Is.StringContaining("alt=\"Override\""));
+			Assert.That(html, Is.Not.StringContaining("Sample alt"));
+		}
+
+		[Test]
+		public void Can_specify_a_CSS_class_for_the_image_tag() {
+			var html = Html.Icon(TestIcon.SampleIcon, cssClass: "my-class").ToString();
+
+			Console.WriteLine(html);
+
+			Assert.That(html, Is.StringContaining("class=\"my-class\""));
+		}
+
+		[Test]
+		public void Can_specify_an_onclick_handler_for_the_image_tag() {
+			var html = Html.Icon(TestIcon.SampleIcon, onclick: "alert('Foo'); return false;").ToString();
+
+			Console.WriteLine(html);
+
+			var expected = String.Format("onclick=\"{0}\"", Html.AttributeEncode("alert('Foo'); return false;"));
+
+			Assert.That(html, Is.StringContaining(expected));
+		}
+
+		[Test]
+		public void Specifying_a_url_causes_the_image_to_be_wrapped_in_a_link_tag_to_that_url() {
+			var html = Html.Icon(TestIcon.SampleIcon, url: "/some/location.html").ToString();
+
+			Console.WriteLine(html);
+
+			Assert.That(html, Is.StringMatching("<a.* href=\"/some/location.html\".*>.*<img.*</a>"));
+		}
+
+		[Test]
+		public void Escapes_double_quotes_in_title() {
 			var html = Html.Icon(TestIcon.WithQuotesInMeta).ToString();
 
 			Console.WriteLine(html);
@@ -69,7 +118,7 @@ namespace IconHelper.Tests {
 		}
 
 		[Test]
-		public void Escapes_quotes_in_alt_text() {
+		public void Escapes_double_quotes_in_alt_text() {
 			var html = Html.Icon(TestIcon.WithQuotesInMeta).ToString();
 
 			Console.WriteLine(html);
@@ -80,23 +129,14 @@ namespace IconHelper.Tests {
 		}
 
 		[Test]
-		public void Can_override_title_in_metadata() {
-			var html = Html.Icon(TestIcon.SampleIcon, title: "Override").ToString();
+		public void Escapes_double_quotes_in_onclick_handler() {
+			var html = Html.Icon(TestIcon.SampleIcon, onclick: "alert(\"foo\");").ToString();
 
 			Console.WriteLine(html);
 
-			Assert.That(html, Is.StringContaining("title=\"Override\""));
-			Assert.That(html, Is.Not.StringContaining("Sample title"));
-		}
+			var expected = String.Format("onclick=\"{0}\"", Html.AttributeEncode("alert(\"foo\");"));
 
-		[Test]
-		public void Can_override_alt_in_metadata() {
-			var html = Html.Icon(TestIcon.SampleIcon, alt: "Override").ToString();
-
-			Console.WriteLine(html);
-
-			Assert.That(html, Is.StringContaining("alt=\"Override\""));
-			Assert.That(html, Is.Not.StringContaining("Sample alt"));
+			Assert.That(html, Is.StringContaining(expected));
 		}
 
 		[Test]

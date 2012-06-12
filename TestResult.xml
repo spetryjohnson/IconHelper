@@ -1,27 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\work\IconHelper\IconHelper.nunit" total="9" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-06-12" time="08:45:01">
+<test-results name="C:\work\IconHelper\IconHelper.nunit" total="13" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-06-12" time="09:07:11">
   <environment nunit-version="2.5.9.10348" clr-version="2.0.50727.3634" os-version="Microsoft Windows NT 5.2.3790 Service Pack 2" platform="Win32NT" cwd="C:\work\IconHelper" machine-name="VM-SETH-FSBPT" user="Administrator" user-domain="VM-SETH-FSBPT" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Project" name="C:\work\IconHelper\IconHelper.nunit" executed="True" result="Success" success="True" time="1.141" asserts="0">
+  <test-suite type="Project" name="C:\work\IconHelper\IconHelper.nunit" executed="True" result="Success" success="True" time="0.797" asserts="0">
     <results>
-      <test-suite type="Assembly" name="C:\work\IconHelper\Tests\bin\Debug\IconHelper.Tests.dll" executed="True" result="Success" success="True" time="1.141" asserts="0">
+      <test-suite type="Assembly" name="C:\work\IconHelper\Tests\bin\Debug\IconHelper.Tests.dll" executed="True" result="Success" success="True" time="0.766" asserts="0">
         <results>
-          <test-suite type="Namespace" name="IconHelper" executed="True" result="Success" success="True" time="1.125" asserts="0">
+          <test-suite type="Namespace" name="IconHelper" executed="True" result="Success" success="True" time="0.766" asserts="0">
             <results>
-              <test-suite type="Namespace" name="Tests" executed="True" result="Success" success="True" time="1.125" asserts="0">
+              <test-suite type="Namespace" name="Tests" executed="True" result="Success" success="True" time="0.766" asserts="0">
                 <results>
-                  <test-suite type="TestFixture" name="IconExtensionsTests" executed="True" result="Success" success="True" time="1.125" asserts="0">
+                  <test-suite type="TestFixture" name="IconExtensionsTests" executed="True" result="Success" success="True" time="0.766" asserts="0">
                     <results>
-                      <test-case name="IconHelper.Tests.IconExtensionsTests.Can_override_alt_in_metadata" executed="True" result="Success" success="True" time="0.313" asserts="2" />
-                      <test-case name="IconHelper.Tests.IconExtensionsTests.Can_override_title_in_metadata" executed="True" result="Success" success="True" time="0.000" asserts="2" />
-                      <test-case name="IconHelper.Tests.IconExtensionsTests.Escapes_quotes_in_alt_text" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-                      <test-case name="IconHelper.Tests.IconExtensionsTests.Escapes_quotes_in_title" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="IconHelper.Tests.IconExtensionsTests.Can_specify_a_CSS_class_for_the_image_tag" executed="True" result="Success" success="True" time="0.141" asserts="1" />
+                      <test-case name="IconHelper.Tests.IconExtensionsTests.Can_specify_alt_text_that_overrides_the_metadata" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                      <test-case name="IconHelper.Tests.IconExtensionsTests.Can_specify_an_onclick_handler_for_the_image_tag" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="IconHelper.Tests.IconExtensionsTests.Can_specify_title_that_overrides_the_metadata" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                      <test-case name="IconHelper.Tests.IconExtensionsTests.Escapes_double_quotes_in_alt_text" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="IconHelper.Tests.IconExtensionsTests.Escapes_double_quotes_in_onclick_handler" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="IconHelper.Tests.IconExtensionsTests.Escapes_double_quotes_in_title" executed="True" result="Success" success="True" time="0.000" asserts="1" />
                       <test-case name="IconHelper.Tests.IconExtensionsTests.Generates_image_tag" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-                      <test-case name="IconHelper.Tests.IconExtensionsTests.Image_alt_text_equals_alt_text_from_metadata" executed="True" result="Success" success="True" time="0.016" asserts="1" />
+                      <test-case name="IconHelper.Tests.IconExtensionsTests.Image_alt_text_equals_alt_text_from_metadata" executed="True" result="Success" success="True" time="0.000" asserts="1" />
                       <test-case name="IconHelper.Tests.IconExtensionsTests.Image_src_equals_filename_from_metadata" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-                      <test-case name="IconHelper.Tests.IconExtensionsTests.Image_title_equals_title_from_metadata" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="IconHelper.Tests.IconExtensionsTests.Image_title_equals_title_from_metadata" executed="True" result="Success" success="True" time="0.016" asserts="1" />
                       <test-case name="IconHelper.Tests.IconExtensionsTests.Paths_starting_with_tilde_are_expanded_using_app_root" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="IconHelper.Tests.IconExtensionsTests.Specifying_a_url_causes_the_image_to_be_wrapped_in_a_link_tag_to_that_url" executed="True" result="Success" success="True" time="0.078" asserts="1" />
                     </results>
                   </test-suite>
                 </results>

@@ -16,5 +16,21 @@ namespace IconHelper.Utils {
 				? value
 				: returnIfNullOrEmpty;
 		}
+
+		/// <summary>
+		/// Returns TRUE if the string is either null or empty, FALSE otherwise. Syntactic sugar 
+		/// for String.IsNullOrEmpty()
+		/// </summary>
+		public static bool IsNullOrEmpty(this string value) {
+			return String.IsNullOrEmpty(value);
+		}
+
+		/// <summary>
+		/// Returns TRUE if the string is not null and contains a non-empty value. Returns FALSE if the 
+		/// value is null or empty. Syntactic sugar over String.IsNullOrEmpty()
+		/// </summary>
+		public static bool IsNotNullOrEmpty(this string value) {
+			return !String.IsNullOrEmpty(value);
+		}
 	}
 }
