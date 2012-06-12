@@ -56,8 +56,8 @@ namespace IconHelper.Web.Helpers {
 			object attributes = null) {
 
 			var image = new TagBuilder("img");
-			//image.Attributes.Add("alt", alt);
-			//image.Attributes.Add("title", title);
+			image.Attributes.Add("alt", alt ?? icon.AltText);
+			image.Attributes.Add("title", title ?? icon.Title);
 			//image.MergeAttributes(htmlAttributes.ToHtmlAttributeDictionary(), true);
 
 			// filenames starting with a "~" are treated as relative to app root
