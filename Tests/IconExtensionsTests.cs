@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using IconHelper.Utils;
-using IconHelper.Web.Helpers;
-using IconHelper.Web.Models;
 
-namespace IconHelper.Tests.Helpers {
+namespace IconHelper.Tests {
 	
 	[TestFixture]
 	public class IconExtensionsTests : HtmlHelperTestBase {

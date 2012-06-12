@@ -62,9 +62,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\IconMetaData.cs" />
-    <Compile Include="Helpers\IconExtensions.cs" />
-    <Compile Include="Models\IconAttribute.cs" />
     <Compile Include="Models\Icon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -116,13 +113,20 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Utils\Utils.csproj">
+    <ProjectReference Include="..\IconHelper\IconHelper.csproj">
+      <Project>{D3691B96-FCBA-425E-B655-C585FE196D33}</Project>
+      <Name>IconHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\IconHelper.Utils.csproj">
       <Project>{85ADFEAD-F90E-4A7D-904C-58B963F94640}</Project>
-      <Name>Utils</Name>
+      <Name>IconHelper.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -4,9 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using IconHelper.Utils;
-using IconHelper.Web.Models;
 
-namespace IconHelper.Web.Helpers {
+namespace IconHelper {
 
 	/// <summary>
 	/// Represents a set of metadata about an icon. This interface gives us a consistent (and test-friendly) 

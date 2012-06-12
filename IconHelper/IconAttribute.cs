@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Diagnostics.Contracts;
 
-namespace IconHelper.Web.Models {
+namespace IconHelper {
 
 	/// <summary>
-	/// Metadata attribute that lets us track data such as image path, default alt text, etc for 
-	/// each Icons enum value.
+	/// Attribute that lets us associate metadata such as image path, default alt text, etc on
+	/// an Enum representing the known icons in a project.
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
 	public class IconAttribute : Attribute {
