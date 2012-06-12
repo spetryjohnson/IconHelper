@@ -1,7 +1,27 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿@using IconHelper
+@using IconHelper.Web.Models
+@{
+	ViewBag.Title = "Icon Helper Sample Site";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Icon Helper Sample Site</h2>
 
+<h3>Basic Usage</h3>
+<p>Passing the icon enum with no arguments renders an image tag using the metadata from the icon's attribute.</p>
+@Html.Icon(Icon.Checkmark)
+
+
+<h3>Custom Title and Alt Text</h3>
+<p>You can override the alt text and image title.</p>
+@Html.Icon(Icon.Delete, title: "This is a custom title", alt: "Custom alt")
+
+
+<h3>Click Event Handler</h3>
+<p>You can add a click event handler.</p>
+@Html.Icon(Icon.Checkmark, onclick: "alert('you clicked the icon!');")
+
+
+<h3>Click to Navigate</h3>
+<p>You can specify a URL, causing the image to be wrapped in a link tag.</p>
+@Html.Icon(Icon.Checkmark, url: "/?we-navigated-away")

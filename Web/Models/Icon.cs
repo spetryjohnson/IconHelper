@@ -10,10 +10,10 @@ namespace IconHelper.Web.Models {
 	/// </summary>
 	public enum Icon {
 
-		[Icon("delete.png", title: "Click here to delete this item", alt: "Delete")]
+		[Icon("~/Content/icon-delete.png", title: "Click here to delete this item", alt: "Delete")]
 		Delete,
 
-		[Icon("checkmark.png", title: "This is a checkmark icon!")]
+		[Icon("~/Content/icon-checkmark.png", title: "This is a checkmark icon!", alt: "Checkmark")]
 		Checkmark
 	}
 }

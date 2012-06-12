@@ -13,8 +13,8 @@ namespace IconHelper.Utils {
 		/// </summary>
 		public static string IfNullOrEmpty(this string value, string returnIfNullOrEmpty) {
 			return String.IsNullOrEmpty(value)
-				? value
-				: returnIfNullOrEmpty;
+				? returnIfNullOrEmpty
+				: value;
 		}
 
 		/// <summary>

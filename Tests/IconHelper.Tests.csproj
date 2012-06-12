@@ -31,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MvcContrib.TestHelper">
-      <HintPath>..\lib\MVCContrib.release.3.0.51.0\MvcContrib.TestHelper.dll</HintPath>
-    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\lib\NUnit-2.5.9.10348\nunit.framework.dll</HintPath>
     </Reference>

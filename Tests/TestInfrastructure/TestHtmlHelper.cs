@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
-using Rhino.Mocks;
 using System.Web.Routing;
+using Rhino.Mocks;
+using IconHelper.Utils.Fakes;
 
 namespace IconHelper.Tests {
 	
@@ -22,7 +23,7 @@ namespace IconHelper.Tests {
 
 		public static TestHtmlHelper Create(string appPath = "/") {
 			var mockery = new MockRepository();
-			var httpContext = new MvcContrib.TestHelper.Fakes.FakeHttpContext(appPath);
+			var httpContext = new FakeHttpContext(appPath: appPath);
 			var controllerContext = new ControllerContext(httpContext, new RouteData(), mockery.DynamicMock<ControllerBase>());
 			var view = mockery.DynamicMock<IView>();
 			var viewData = new ViewDataDictionary(new { });

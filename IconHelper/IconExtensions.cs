@@ -73,7 +73,7 @@ namespace IconHelper {
 
 			if (imagePath.StartsWith("~/")) {
 				var pathWithoutTilde = imagePath.Substring(2);
-				var appRoot = html.ViewContext.HttpContext.Request.AppRelativeCurrentExecutionFilePath;
+				var appRoot = html.ViewContext.HttpContext.Request.ApplicationPath;
 
 				imagePath = Path.Combine(appRoot, pathWithoutTilde);
 			}
