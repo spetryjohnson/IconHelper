@@ -16,7 +16,7 @@ namespace IconHelper.Tests.Helpers {
 			[Icon("sample.png", title: "Sample title", alt: "Sample alt")]
 			SampleIcon,
 
-			[Icon("~/sample.png", title: "With Tilde", alt: "Tilde")]
+			[Icon("~/icons/sample.png", title: "With Tilde", alt: "Tilde")]
 			StartsWithTilde,
 		}
 
@@ -35,6 +35,8 @@ namespace IconHelper.Tests.Helpers {
 
 		[Test]
 		public void Paths_starting_with_tilde_are_expanded_using_app_root() {
+			Html = TestHtmlHelper.Create("/myAppRoot/");
+
 			var icon = TestIcon.StartsWithTilde;
 
 			var expectedSrc = icon.GetAttributes<IconAttribute>()
@@ -43,7 +45,7 @@ namespace IconHelper.Tests.Helpers {
 
 			var html = Html.Icon(icon).ToString();
 
-			Assert.That(html, Is.StringContaining("TODO"));
+			Assert.That(html, Is.StringContaining("/myAppRoot/icons/sample.png"));
 		}
 	}
 }

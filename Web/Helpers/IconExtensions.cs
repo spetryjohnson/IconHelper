@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using IconHelper.Utils;
 using IconHelper.Web.Models;
+using System.IO;
 
 namespace IconHelper.Web.Helpers {
 
@@ -14,7 +15,7 @@ namespace IconHelper.Web.Helpers {
 	public static class IconExtensions {
 
 		/// <summary>
-		/// Renders an icon image. 
+		/// Renders an icon image for an enum that has an associated IconAttribute.
 		/// </summary>
 		/// <param name="title">The title to use. If NULL, defaults to the value stored on the icon.</param>
 		/// <param name="alt">The alt text. If NULL, defaults to the value stored on the icon.</param>
@@ -37,7 +38,7 @@ namespace IconHelper.Web.Helpers {
 		}
 
 		/// <summary>
-		/// Renders an icon image. 
+		/// Renders an icon image using the specified metadata.
 		/// </summary>
 		/// <param name="title">The title to use. If NULL, defaults to the value stored on the icon.</param>
 		/// <param name="alt">The alt text. If NULL, defaults to the value stored on the icon.</param>
@@ -59,7 +60,17 @@ namespace IconHelper.Web.Helpers {
 			//image.Attributes.Add("title", title);
 			//image.MergeAttributes(htmlAttributes.ToHtmlAttributeDictionary(), true);
 
-			image.Attributes.Add("src", icon.Filename);
+			// filenames starting with a "~" are treated as relative to app root
+			var imagePath = icon.Filename;
+
+			if (imagePath.StartsWith("~/")) {
+				var pathWithoutTilde = imagePath.Substring(2);
+				var appRoot = html.ViewContext.HttpContext.Request.AppRelativeCurrentExecutionFilePath;
+
+				imagePath = Path.Combine(appRoot, pathWithoutTilde);
+			}
+
+			image.Attributes.Add("src", imagePath);
 
 			return new HtmlString(
 				image.ToString(TagRenderMode.SelfClosing)

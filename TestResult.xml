@@ -1,30 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\work\IconHelper\IconHelper.nunit" total="2" errors="0" failures="1" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-05-31" time="10:37:32">
+<test-results name="C:\work\IconHelper\IconHelper.nunit" total="2" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-06-11" time="22:38:59">
   <environment nunit-version="2.5.9.10348" clr-version="2.0.50727.3634" os-version="Microsoft Windows NT 5.2.3790 Service Pack 2" platform="Win32NT" cwd="C:\work\IconHelper" machine-name="VM-SETH-FSBPT" user="Administrator" user-domain="VM-SETH-FSBPT" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Project" name="C:\work\IconHelper\IconHelper.nunit" executed="True" result="Failure" success="False" time="1.938" asserts="0">
+  <test-suite type="Project" name="C:\work\IconHelper\IconHelper.nunit" executed="True" result="Success" success="True" time="0.891" asserts="0">
     <results>
-      <test-suite type="Assembly" name="C:\work\IconHelper\Tests\bin\Debug\IconHelper.Tests.dll" executed="True" result="Failure" success="False" time="1.906" asserts="0">
+      <test-suite type="Assembly" name="C:\work\IconHelper\Tests\bin\Debug\IconHelper.Tests.dll" executed="True" result="Success" success="True" time="0.891" asserts="0">
         <results>
-          <test-suite type="Namespace" name="IconHelper" executed="True" result="Failure" success="False" time="1.906" asserts="0">
+          <test-suite type="Namespace" name="IconHelper" executed="True" result="Success" success="True" time="0.891" asserts="0">
             <results>
-              <test-suite type="Namespace" name="Tests" executed="True" result="Failure" success="False" time="1.906" asserts="0">
+              <test-suite type="Namespace" name="Tests" executed="True" result="Success" success="True" time="0.891" asserts="0">
                 <results>
-                  <test-suite type="Namespace" name="Helpers" executed="True" result="Failure" success="False" time="1.906" asserts="0">
+                  <test-suite type="Namespace" name="Helpers" executed="True" result="Success" success="True" time="0.891" asserts="0">
                     <results>
-                      <test-suite type="TestFixture" name="IconExtensionsTests" executed="True" result="Failure" success="False" time="1.719" asserts="0">
+                      <test-suite type="TestFixture" name="IconExtensionsTests" executed="True" result="Success" success="True" time="0.891" asserts="0">
                         <results>
-                          <test-case name="IconHelper.Tests.Helpers.IconExtensionsTests.Generates_image_icon_and_sets_src_equal_to_filename_associated_with_the_enum" executed="True" result="Success" success="True" time="0.641" asserts="1" />
-                          <test-case name="IconHelper.Tests.Helpers.IconExtensionsTests.Paths_starting_with_tilde_are_expanded_using_app_root" executed="True" result="Failure" success="False" time="0.016" asserts="1">
-                            <failure>
-                              <message><![CDATA[  Expected: String containing "TODO"
-  But was:  "<img src="~/sample.png" />"
-]]></message>
-                              <stack-trace><![CDATA[at IconHelper.Tests.Helpers.IconExtensionsTests.Paths_starting_with_tilde_are_expanded_using_app_root() in C:\work\IconHelper\Tests\Helpers\IconExtensionsTests.cs:line 46
-]]></stack-trace>
-                            </failure>
-                          </test-case>
+                          <test-case name="IconHelper.Tests.Helpers.IconExtensionsTests.Generates_image_icon_and_sets_src_equal_to_filename_associated_with_the_enum" executed="True" result="Success" success="True" time="0.203" asserts="1" />
+                          <test-case name="IconHelper.Tests.Helpers.IconExtensionsTests.Paths_starting_with_tilde_are_expanded_using_app_root" executed="True" result="Success" success="True" time="0.000" asserts="1" />
                         </results>
                       </test-suite>
                     </results>
