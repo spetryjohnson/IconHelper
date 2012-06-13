@@ -58,27 +58,10 @@ namespace IconHelper {
 			image.Attributes.Add("alt", alt ?? icon.AltText);
 			image.Attributes.Add("title", title ?? icon.Title);
 
-			if (onclick.IsNotNullOrEmpty()) {
-				image.Attributes.Add("onclick", onclick);
-			}
-
-			if (cssClass.IsNotNullOrEmpty()) {
-				image.Attributes.Add("class", cssClass);
-			}
-
-			//image.MergeAttributes(htmlAttributes.ToHtmlAttributeDictionary(), true);
-
-			// filenames starting with a "~" are treated as relative to app root
-			var imagePath = icon.Filename;
-
-			if (imagePath.StartsWith("~/")) {
-				var pathWithoutTilde = imagePath.Substring(2);
-				var appRoot = html.ViewContext.HttpContext.Request.ApplicationPath;
-
-				imagePath = Path.Combine(appRoot, pathWithoutTilde);
-			}
-
-			image.Attributes.Add("src", imagePath);
+			SetOnclickHandler(onclick, image);
+			SetCssClass(cssClass, image);
+			SetImageSrc(html, icon, image);
+			MergeHtmlAttributes(attributes, image);
 
 			var imageTagHtml = new HtmlString(
 				image.ToString(TagRenderMode.SelfClosing)
@@ -91,6 +74,71 @@ namespace IconHelper {
 			}
 
 			return imageTagHtml;
+		}
+
+		private static void SetOnclickHandler(string onclick, TagBuilder image) {
+			if (onclick.IsNotNullOrEmpty()) {
+				image.Attributes.AddOrAppend("onclick", onclick, ";");
+				image.Attributes.AddOrAppend("style", "cursor: pointer", ";");
+				image.Attributes.AddOrAppend("class", "clickable-icon", " ");
+			}
+		}
+
+		private static void SetCssClass(string cssClass, TagBuilder image) {
+			if (cssClass.IsNotNullOrEmpty()) {
+				image.Attributes.AddOrAppend("class", cssClass, " ");
+			}
+		}
+
+		private static void SetImageSrc(HtmlHelper html, IIconMetaData icon, TagBuilder image) {
+			var imagePath = icon.Filename;
+
+			// filenames starting with a "~" are treated as relative to app root
+			if (imagePath.StartsWith("~/")) {
+				var pathWithoutTilde = imagePath.Substring(2);
+				var appRoot = html.ViewContext.HttpContext.Request.ApplicationPath;
+
+				imagePath = Path.Combine(appRoot, pathWithoutTilde);
+			}
+
+			image.Attributes.Add("src", imagePath);
+		}
+
+		/// <summary>
+		/// Converts the attribute object into a name/value object representing HTML attributes
+		/// and then merges them into the image's attributes object. 
+		/// 
+		/// Values for keys such as "class", "style" and "onclick" are appended to existing
+		/// values for those keys.
+		/// 
+		/// Values for other keys (where we don't know which delimiter to use for joining)
+		/// just replace any existing value.
+		/// </summary>
+		private static void MergeHtmlAttributes(object attributes, TagBuilder image) {
+			var customAttrs = attributes.ToHtmlAttributeDictionary();
+
+			foreach (var keyValuePair in customAttrs) {
+				if (keyValuePair.Value == null)
+					continue;
+
+				var key = keyValuePair.Key.ToLower();
+				var value = keyValuePair.Value.ToString();
+
+				switch (key) {
+					case "class":
+						image.Attributes.AddOrAppend(key, value, " ");
+						break;
+
+					case "onclick":
+					case "style":
+						image.Attributes.AddOrAppend(key, value, "; ");
+						break;
+
+					default:
+						image.Attributes[key] = value;
+						break;
+				}
+			}
 		}
 	}
 }
