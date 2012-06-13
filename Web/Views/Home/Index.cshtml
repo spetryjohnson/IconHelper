@@ -9,19 +9,30 @@
 
 <h3>Basic Usage</h3>
 <p>Passing the icon enum with no arguments renders an image tag using the metadata from the icon's attribute.</p>
-@Html.Icon(Icon.Checkmark)
+<pre>@@Html.Icon(Icon.Checkmark)</pre>
+@Html.Icon(Icon.Checkmark)  
+
 
 
 <h3>Custom Title and Alt Text</h3>
 <p>You can override the alt text and image title.</p>
+<pre>@@Html.Icon(Icon.Delete, title: "This is a custom title", alt: "Custom alt")</pre>
 @Html.Icon(Icon.Delete, title: "This is a custom title", alt: "Custom alt")
 
 
 <h3>Click Event Handler</h3>
-<p>You can add a click event handler.</p>
+<p>You can add a click event handler. This also turns the cursor to a pointer.</p>
+<pre>@@Html.Icon(Icon.Checkmark, onclick: "alert('you clicked the icon!');")</pre>
 @Html.Icon(Icon.Checkmark, onclick: "alert('you clicked the icon!');")
 
 
 <h3>Click to Navigate</h3>
 <p>You can specify a URL, causing the image to be wrapped in a link tag.</p>
+<pre>@@Html.Icon(Icon.Checkmark, url: "/?we-navigated-away")</pre>
 @Html.Icon(Icon.Checkmark, url: "/?we-navigated-away")
+
+
+<h3>Custom Attributes</h3>
+<p>You can specify custom HTML attributes for the image tag. (View source to see data attribute)</p>
+<pre>@@Html.Icon(Icon.Delete, attributes: new { data_attr = "my-data-attribute" })</pre>
+@Html.Icon(Icon.Delete, attributes: new { data_attr = "my-data-attribute" })
